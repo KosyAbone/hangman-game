@@ -1,5 +1,5 @@
-function hangman(words) {return `FAILED: WRONG INPUT ${words}`
+function hangman(words) {return `FAILED: WRONG ${words}`
     
 }
-let result = hangman("mango")
+let result = hangman("INPUT")
 console.log(result);
