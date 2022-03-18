@@ -18,7 +18,7 @@ const play = function(){
     let tries;
     let lives = 6
     let present = true
-    //let guess = "n"
+    let guess = "n"
 
         // while(tries < 6){
         //     const guess = prompt("Guess the letter: ");
