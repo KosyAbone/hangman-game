@@ -1,20 +1,3 @@
-// import React from 'react'
-
-// import React from 'react'
-
-// function Hangman() {
-//   return (
-//     <div>Hangman</div>
-//   )
-// }
-
-// export default Hangman
-// const hangman = () => {
-
-// return gameStart();
-
-// }
-
 function gameStart() {
     console.log(`----------------------------------------------
 Welcome to the Hangman Game!!!
