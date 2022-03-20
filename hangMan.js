@@ -1,4 +1,4 @@
-function gameStart() {
+const gameStart = () => {
     console.log(`----------------------------------------------
 Welcome to the Hangman Game!!!
 ----------------------------------------------
@@ -6,24 +6,25 @@ Welcome to the Hangman Game!!!
 Game Started...\n`)
 }
 
-const play = function(){
+const play = () => {
     const secretWord = "apee";
     let lives = 6;
 
     const toFill = [...secretWord].map( i => i = '_');
     console.log(toFill)
     let remainingLetters = secretWord.length
+    
 
-    function gameOver() {
-            if(remainingLetters === 0){
-                alert("You Win!!! You're a Champ");
-                console.log("You Win!!!! You're a Champ");
-            }
-            if(lives === 0){
-                alert("Ouch!!! You're DEAD! Better luck next time...")
-                console.log("Ouch!!! You're DEAD! Better luck next time...")
-            }
+const gameOver = () => {
+    if(remainingLetters === 0){
+        alert("You Win!!! You're a Champ");
+        console.log("You Win!!!! You're a Champ");
     }
+    if(lives === 0){
+        alert("Ouch!!! You're DEAD! Better luck next time...")
+        console.log("Ouch!!! You're DEAD! Better luck next time...")
+    }
+}
 
     while(remainingLetters > 0){
             let guess = prompt("Guess the letter: ");
@@ -40,7 +41,7 @@ const play = function(){
                     lives--;
                     console.log(toFill)
                 }
-                
+
             if(lives > 0)
                 //alert(`You have ${lives} lives left. Keep Guessing...`)
                 console.log(`You have ${lives} lives left. Keep Guessing...`)
