@@ -1,3 +1,14 @@
+// import React from 'react'
+
+// import React from 'react'
+
+// function Hangman() {
+//   return (
+//     <div>Hangman</div>
+//   )
+// }
+
+// export default Hangman
 // const hangman = () => {
 
 // return gameStart();
@@ -14,52 +25,52 @@ Game Started...\n`)
 
 const play = function(){
     const secretWord = "apee";
-    const toFill = []
-    let tries;
-    let lives = 6
-    let present = true
-    let guess = "n"
+    //const toFill = [];
+    let lives = 6;
 
-        // while(tries < 6){
-        //     const guess = prompt("Guess the letter: ");
-        //     if(secretWord.includes(guess)){
-        //         let noOfFound = secretWord.split(guess).length - 1
-        //         if(noOfFound == 1){
-        //             let ind = secretWord.indexOf(guess);
-        //             toFill[ind] = guess;
-        //         }
-        //         if(noOfFound > 1){
+    
+        const toFill = [...secretWord].map( i => i = '_');
+        console.log(toFill)
+        let remainingLetters = secretWord.length
 
-        //         }
-        //     }
-        for(let i = 0; i < secretWord.length;i++){
-            const guess = prompt("Guess the letter: ");
-            //guess = guess.toLowerCase();
-            while(present){
-                if(secretWord[i] === guess){
-                    toFill[i] = guess;
-                    present = true;
-                    i++;
+        function gameOver() {
+            if(remainingLetters === 0){
+                alert("You Win!!! You're a Champ");
+                console.log("You Win!!!! You're a Champ");
+            }
+            if(lives === 0){
+                alert("Ouch!!! You're DEAD! Better luck next time...")
+                console.log("Ouch!!! You're DEAD! Better luck next time...")
+            }
+        }
+
+        while(remainingLetters > 0){
+            let guess = prompt("Guess the letter: ");
+            guess = guess.toLowerCase();
+            if(guess === null) break
+            else if(guess.length !== 1) alert("Please Enter a single Letter");
+            else {
+            for(let i = 0; i < secretWord.length;i++){
+                    if(secretWord[i] === guess){
+                            toFill[i] = guess;
+                            remainingLetters--;      
+                    }
                 }
+                lives--;
+                console.log(toFill)
             }
-            if(!present){present = false}
-            tries++
-            console.log(`You have ${--lives}lives left!`);
-            if(toFill.join('') === secretWord){
-                console.log(`You Win! You tried ${tries} times. `);
-                break
-            }
-            if(tries === 6){
-                console.log(`You ran out of lives. SORRY!!!`);
+            
+            if(lives > 0)
+                //alert(`You have ${lives} lives left. Keep Guessing...`)
+                console.log(`You have ${lives} lives left. Keep Guessing...`)
+
+            if(lives === 0) {
                 break;
             }
-            console.log(`array is ${toFill}`)
-            console.log(`guess is ${guess}`)
+       }
+       gameOver()
 
-        }
-        //}
-        return
-}
+ }
 
 gameStart();
 play()
