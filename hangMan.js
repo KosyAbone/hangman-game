@@ -8,15 +8,13 @@ Game Started...\n`)
 
 const play = function(){
     const secretWord = "apee";
-    //const toFill = [];
     let lives = 6;
 
-    
-        const toFill = [...secretWord].map( i => i = '_');
-        console.log(toFill)
-        let remainingLetters = secretWord.length
+    const toFill = [...secretWord].map( i => i = '_');
+    console.log(toFill)
+    let remainingLetters = secretWord.length
 
-        function gameOver() {
+    function gameOver() {
             if(remainingLetters === 0){
                 alert("You Win!!! You're a Champ");
                 console.log("You Win!!!! You're a Champ");
@@ -25,9 +23,9 @@ const play = function(){
                 alert("Ouch!!! You're DEAD! Better luck next time...")
                 console.log("Ouch!!! You're DEAD! Better luck next time...")
             }
-        }
+    }
 
-        while(remainingLetters > 0){
+    while(remainingLetters > 0){
             let guess = prompt("Guess the letter: ");
             guess = guess.toLowerCase();
             if(guess === null) break
@@ -50,8 +48,9 @@ const play = function(){
             if(lives === 0) {
                 break;
             }
-       }
-       gameOver()
+    }
+       
+    gameOver()
 
  }
 
