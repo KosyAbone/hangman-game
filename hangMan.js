@@ -31,16 +31,16 @@ const play = function(){
             if(guess === null) break
             else if(guess.length !== 1) alert("Please Enter a single Letter");
             else {
-            for(let i = 0; i < secretWord.length;i++){
-                    if(secretWord[i] === guess){
-                            toFill[i] = guess;
-                            remainingLetters--;      
+                for(let i = 0; i < secretWord.length;i++){
+                        if(secretWord[i] === guess){
+                                toFill[i] = guess;
+                                remainingLetters--;      
+                        }
                     }
+                    lives--;
+                    console.log(toFill)
                 }
-                lives--;
-                console.log(toFill)
-            }
-            
+                
             if(lives > 0)
                 //alert(`You have ${lives} lives left. Keep Guessing...`)
                 console.log(`You have ${lives} lives left. Keep Guessing...`)
