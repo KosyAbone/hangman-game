@@ -27,7 +27,7 @@ const gameOver = () => {
 }
 
     while(remainingLetters > 0){
-            let guess = prompt("Guess the letter: ");
+            //let guess = prompt("Guess the letter: ");
             guess = guess.toLowerCase();
             if(guess === null) break
             else if(guess.length !== 1) alert("Please Enter a single Letter");

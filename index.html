@@ -1,9 +1,64 @@
 <!DOCTYPE html>
 <html>
     <head>
-
+        <title>Hangman Game</title>
+        <link rel="stylesheet" href="index.css" />
     </head>
     <body>
+        <div class="main-container">
+           
+            <h1 class="title">----------HANGMAN----------</h1>
+            <p>Guess the word</p>
+            <h4 id="word"></h4>
+
+            <svg height="405" width="250" class="figure-container">
+                <!-- Rod -->
+                <line x1="60" y1="40" x2="200" y2="40" />
+                <line x1="200" y1="40" x2="200" y2="90" />
+                <line x1="60" y1="40" x2="60" y2="400" />
+                <line x1="20" y1="400" x2="160" y2="400" />
+        
+                <!-- Head -->
+                <circle cx="200" cy="110" r="20" class="figure-part" />
+                <!-- Body -->
+                <line x1="200" y1="130" x2="200" y2="200" class="figure-part" />
+                <!-- Arms -->
+                <line x1="200" y1="160" x2="170" y2="130" class="figure-part" />
+                <line x1="200" y1="160" x2="230" y2="130" class="figure-part" />
+                <!-- Legs -->
+                <line x1="140" y1="150" x2="120" y2="180" class="figure-part" />
+                <line x1="140" y1="150" x2="160" y2="180" class="figure-part" />
+              </svg>
+
+            <div class="btn-container">
+                <button>A</button>
+                <button>B</button>
+                <button>C</button>
+                <button>D</button>
+                <button>E</button>
+                <button>F</button>
+                <button>G</button>
+                <button>H</button>
+                <button>I</button>
+                <button>J</button>
+                <button>K</button>
+                <button>L</button>
+                <button>M</button>
+                <button>N</button>
+                <button>O</button>
+                <button>P</button>
+                <button>Q</button>
+                <button>R</button>
+                <button>S</button>
+                <button>T</button>
+                <button>U</button>
+                <button>V</button>
+                <button>W</button>
+                <button>X</button>
+                <button>Y</button>
+                <button>Z</button>
+            </div>
+        </div>
         <script src = "hangMan.js"></script>
     </body>
 </html>
