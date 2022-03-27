@@ -11,10 +11,10 @@
             <p>GUESS THE WORD</p>
 
             <div class="userGuess">
-                <p id="hint"><small>(hint: *the hint*)</small></p>
-                <h4 id="word">the word</h4>
+                <p><span id="hint">(the hint)</span></p>
+                <h1 id="word">_ _ _ _ _ _ _</h1>
             </div>
-            <p><i>Lives Remaining: 6</i></p>
+            <p>Lives Remaining: <span id="lives">6</span></p>
 
             <svg height="350" width="250" class="figure-container">
                 <!-- Rod -->
@@ -35,7 +35,7 @@
                 <line x1="200" y1="180" x2="240" y2="210" class="figure-part" />
               </svg>
 
-            <div class="btn-container">
+            <div class="alpha-container">
                 <button>A</button>
                 <button>B</button>
                 <button>C</button>
@@ -64,7 +64,10 @@
                 <button>Z</button>
             </div>
 
+            <button id="start-btn">START</button>
+
         </div>
+
         <script src = "hangMan.js"></script>
     </body>
 </html>

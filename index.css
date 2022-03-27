@@ -41,7 +41,7 @@ body {
     right: 30px;
 }
 
-.btn-container {
+.alpha-container {
     position: absolute;
     bottom: 30px;
     left: 20px;
@@ -53,7 +53,7 @@ body {
     padding: 20px;
 }
 
-.btn-container > button{
+.alpha-container > button{
     background-color: #fdcc94;
     font-size: 16px;
     font-weight: 600;
@@ -62,7 +62,7 @@ body {
     width: 30px;
 }
 
-.btn-container > button:hover{
+.alpha-container > button:hover{
     cursor: pointer;
     background-color: #9b6c38;
 }
@@ -73,7 +73,22 @@ body {
     stroke-width: 4px;
     stroke-linecap: round;
   }
+#hint{
+    color: red;
+    font-size: 15px;
+}
+  #word{
+      font-size: 34px;
+  }
 
 /* .figure-part {
     display: none;
 } */
+
+#start-btn{
+    position: absolute;
+    padding: 8px 30px;
+    border-radius: 10px;
+    top: 465px;
+    font-size: 18px;
+}

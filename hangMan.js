@@ -1,59 +1,49 @@
-const gameStart = () => {
-    console.log(`----------------------------------------------
-Welcome to the Hangman Game!!!
-----------------------------------------------
-    
-Game Started...\n`)
-}
+let guessWord = document.getElementById('word')
+let lives = document.getElementById('lives')
+let letters = document.querySelectorAll('.alpha-container')
+let hint = document.getElementById('hint')
+let letter;
+// console.log(guessWord.innerText)
+// console.log(lives.innerText)
+// for(let z of letter){
+//     console.log(z.innerText)
+// }
+const secretWord = "APEMONKEY";
+guessWord.innerText = [...secretWord].map( i => i = '_').join(' ');
+guessWord = guessWord.innerText.split('')
+console.log(guessWord)
+hint.innerText = "animal"
+let remainingLetters = secretWord.length
+console.log(remainingLetters)
 
-const play = () => {
-    const secretWord = "apee";
-    let lives = 6;
 
-    const toFill = [...secretWord].map( i => i = '_');
-    console.log(toFill)
-    let remainingLetters = secretWord.length
-    
-
-const gameOver = () => {
-    if(remainingLetters === 0){
-        alert("You Win!!! You're a Champ");
-        console.log("You Win!!!! You're a Champ");
+letters.addEventListener('click', e => {
+    if(e.target.matches('button')){
+        letter = e.target.innerText
+        console.log(letter)
     }
-    if(lives === 0){
-        alert("Ouch!!! You're DEAD! Better luck next time...")
-        console.log("Ouch!!! You're DEAD! Better luck next time...")
-    }
-}
+    //while(remainingLetters > 0){
+        //let guess = prompt("Guess the letter: ");
+        // letter = letter.toLowerCase();
+        // if(guess === null) break
+        // else if(guess.length !== 1) alert("Please Enter a single Letter");
+        //     for(let i = 0; i < secretWord.length;i++){
+        //             if(secretWord[i] === letter){
+        //                     guessWord[i] = letter;
+        //                     remainingLetters--;      
+        //             }
+        //     }
+        //     lives--;
+        //     console.log(guessWord)
 
-    while(remainingLetters > 0){
-            //let guess = prompt("Guess the letter: ");
-            guess = guess.toLowerCase();
-            if(guess === null) break
-            else if(guess.length !== 1) alert("Please Enter a single Letter");
-            else {
-                for(let i = 0; i < secretWord.length;i++){
-                        if(secretWord[i] === guess){
-                                toFill[i] = guess;
-                                remainingLetters--;      
-                        }
-                    }
-                    lives--;
-                    console.log(toFill)
-                }
+        // if(lives > 0)
+        //     //alert(`You have ${lives} lives left. Keep Guessing...`)
+        //     console.log(`You have ${lives} lives left. Keep Guessing...`)
 
-            if(lives > 0)
-                //alert(`You have ${lives} lives left. Keep Guessing...`)
-                console.log(`You have ${lives} lives left. Keep Guessing...`)
+        // if(lives === 0) {
+        //     break;
+        // }
+    //}
 
-            if(lives === 0) {
-                break;
-            }
-    }
-       
-    gameOver()
+})
 
- }
-
-gameStart();
-play()
