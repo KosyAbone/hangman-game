@@ -1,20 +1,40 @@
-let guessWord = document.getElementById('word')
+let userGuess = document.getElementById('word')
 let lives = document.getElementById('lives')
-let letters = document.querySelectorAll('.alpha-container')
-let hint = document.getElementById('hint')
+let letters = document.querySelector('.alpha-container')
+let displayedHint = document.getElementById('hint')
 let letter;
 // console.log(guessWord.innerText)
 // console.log(lives.innerText)
 // for(let z of letter){
 //     console.log(z.innerText)
 // }
-const secretWord = "APEMONKEY";
-guessWord.innerText = [...secretWord].map( i => i = '_').join(' ');
-guessWord = guessWord.innerText.split('')
-console.log(guessWord)
+
+const words = ["banana", "cotton", "facebook", "school", "ghana", "abuja"];
+
+const hints = ["fruit", "fabric", "social-media", "place", "country", "state"];
+
+function generateWord() { // Function that generates the word randomly	
+	randNum = Math.floor(Math.random() * words.length);
+	chosenWord = words[randNum];
+    return chosenWord
+}
+
+function generateHint(word){
+	index = words.indexOf(word);
+	let hint = hints[index];
+    return hint
+}
+
+function play(){
+
+}
+
+//userGuess.innerText = [...secretWord].map( i => i = '_').join(' ');
+// userGuess = userGuess.innerText.split('')
+// console.log(userGuess)
 hint.innerText = "animal"
-let remainingLetters = secretWord.length
-console.log(remainingLetters)
+//let remainingLetters = secretWord.length
+//console.log(remainingLetters)
 
 
 letters.addEventListener('click', e => {
@@ -29,12 +49,12 @@ letters.addEventListener('click', e => {
         // else if(guess.length !== 1) alert("Please Enter a single Letter");
         //     for(let i = 0; i < secretWord.length;i++){
         //             if(secretWord[i] === letter){
-        //                     guessWord[i] = letter;
+        //                     userGuess[i] = letter;
         //                     remainingLetters--;      
         //             }
         //     }
         //     lives--;
-        //     console.log(guessWord)
+        //     console.log(userGuess)
 
         // if(lives > 0)
         //     //alert(`You have ${lives} lives left. Keep Guessing...`)

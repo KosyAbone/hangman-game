@@ -28,25 +28,27 @@ const gameOver = () => {
 
     while(remainingLetters > 0){
             let guess = prompt("Guess the letter: ");
-            guess = guess.toLowerCase();
+            //guess = guess.toLowerCase();
             if(guess === null) break
             else if(guess.length !== 1) alert("Please Enter a single Letter");
-                for(let i = 0; i < secretWord.length;i++){
+                for(let i = 0; i < secretWord.length; i++){
                         if(secretWord[i] === guess){
-                                guessArray[i] = guess;
-                                remainingLetters--;      
+                            guessArray[i] = guess;
+                            remainingLetters--;      
                         }
-                    }
-                    lives--;
-                    console.log(guessArray)
+                }
 
-            if(lives > 0)
+            if(!secretWord.includes(guess)) lives--;
+
+            if(lives > 0 && remainingLetters > 0) 
                 //alert(`You have ${lives} lives left. Keep Guessing...`)
                 console.log(`You have ${lives} lives left. Keep Guessing...`)
 
             if(lives === 0) {
                 break;
             }
+
+            console.log(guessArray)
     }
        
     gameOver()
