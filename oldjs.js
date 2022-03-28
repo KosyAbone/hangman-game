@@ -17,12 +17,12 @@ const play = () => {
 
 const gameOver = () => {
     if(remainingLetters === 0){
-        alert("You Win!!! You're a Champ");
         console.log("You Win!!!! You're a Champ");
+        alert("You Win!!! You're a Champ");
     }
     if(lives === 0){
-        alert("Ouch!!! You're DEAD! Better luck next time...")
         console.log("Ouch!!! You're DEAD! Better luck next time...")
+        alert("Ouch!!! You're DEAD! Better luck next time...")
     }
 }
 
@@ -31,13 +31,14 @@ const gameOver = () => {
             //guess = guess.toLowerCase();
             if(guess === null) break
             else if(guess.length !== 1) alert("Please Enter a single Letter");
+            else{
                 for(let i = 0; i < secretWord.length; i++){
-                        if(secretWord[i] === guess){
-                            guessArray[i] = guess;
-                            remainingLetters--;      
-                        }
+                    if(secretWord[i] === guess){
+                        guessArray[i] = guess;
+                        remainingLetters--;      
+                    }
                 }
-
+            }
             if(!secretWord.includes(guess)) lives--;
 
             if(lives > 0 && remainingLetters > 0) 
