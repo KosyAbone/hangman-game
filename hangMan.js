@@ -2,37 +2,54 @@ let userGuess = document.getElementById('word')
 let lives = document.getElementById('lives')
 let letters = document.querySelector('.alpha-container')
 let displayedHint = document.getElementById('hint')
+hint.innerText = "animal"
 let letter;
-// console.log(guessWord.innerText)
-// console.log(lives.innerText)
-// for(let z of letter){
-//     console.log(z.innerText)
-// }
+let tries = []
+let chosenWord;
+
+
+
 
 const words = ["banana", "cotton", "facebook", "school", "ghana", "abuja"];
 
 const hints = ["fruit", "fabric", "social-media", "place", "country", "state"];
 
 function generateWord() { // Function that generates the word randomly	
-	randNum = Math.floor(Math.random() * words.length);
-	chosenWord = words[randNum];
+	let randNum = Math.floor(Math.random() * words.length);
+	let chosenWord = words[randNum];
     return chosenWord
 }
 
 function generateHint(word){
-	index = words.indexOf(word);
+	let index = words.indexOf(word);
 	let hint = hints[index];
     return hint
 }
 
-function play(){
-
+function guessedWord() {
+    userGuess.innerHTML = chosenWord.split('').map(letter => (tries.indexOf(letter) >= 0 ? letter.toLowerCase() : "_ ")).join('');
+    //document.getElementById('display1').value = wordStatus;
 }
+
+/* Testing the generation of words and hints */
+// let w = generateWord()
+// console.log(w)
+// console.log(generateHint(w))
+
+// let chosenWord = generateWord()
+// let chosenHint = generateHint(chosenWord)
+// console.log(chosenWord)
+// console.log(chosenHint)
+
+// function play(){
+//     let word
+
+// }
 
 //userGuess.innerText = [...secretWord].map( i => i = '_').join(' ');
 // userGuess = userGuess.innerText.split('')
 // console.log(userGuess)
-hint.innerText = "animal"
+
 //let remainingLetters = secretWord.length
 //console.log(remainingLetters)
 
@@ -40,8 +57,11 @@ hint.innerText = "animal"
 letters.addEventListener('click', e => {
     if(e.target.matches('button')){
         letter = e.target.innerText
-        console.log(letter)
+        //console.log(letter)
+        
     }
+})
+
     //while(remainingLetters > 0){
         //let guess = prompt("Guess the letter: ");
         // letter = letter.toLowerCase();
@@ -65,5 +85,5 @@ letters.addEventListener('click', e => {
         // }
     //}
 
-})
+
 
