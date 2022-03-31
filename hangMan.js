@@ -1,13 +1,15 @@
 let userGuess = document.getElementById('word')
 let lives = document.getElementById('lives')
-let letters = document.querySelector('.alpha-container')
+let startBtn = document.getElementById('start-btn')
+let finalMessage = document.getElementById('final-message')
+let letters = document.getElementsByClassName('alphabet')
+console.log(letters[0].innerHTML)
 let displayedHint = document.getElementById('hint')
-hint.innerText = "animal"
 let letter;
+let initialFill;
 let tries = []
 let chosenWord;
-
-
+let failed = 0
 
 
 const words = ["banana", "cotton", "facebook", "school", "ghana", "abuja"];
@@ -16,7 +18,7 @@ const hints = ["fruit", "fabric", "social-media", "place", "country", "state"];
 
 function generateWord() { // Function that generates the word randomly	
 	let randNum = Math.floor(Math.random() * words.length);
-	let chosenWord = words[randNum];
+	chosenWord = words[randNum];
     return chosenWord
 }
 
@@ -31,34 +33,48 @@ function guessedWord() {
     //document.getElementById('display1').value = wordStatus;
 }
 
-/* Testing the generation of words and hints */
-// let w = generateWord()
-// console.log(w)
-// console.log(generateHint(w))
 
-// let chosenWord = generateWord()
-// let chosenHint = generateHint(chosenWord)
-// console.log(chosenWord)
-// console.log(chosenHint)
+function checkGameWon(){
+    if(userGuess.toLowerCase() === chosenWord){
+        for(let each of letters){
+            each.disabled = true;
+            each.style.backgroundColor = "#fdcc94"
+        }
+    }
+    message.innerHTML = "----YOU'VE WON!!!----"
+}
 
-// function play(){
-//     let word
+/* ---when start is clicked to begin game--- */
+function handleStart(){
+    chosenWord = generateWord()
+    displayedHint = generateHint()
+    tries = []
+    failed = 0;
+    initialFill = chosenWord.replace(/[A-Z]/g, '_ ')
+    for(let each of letters){
+        each.disabled = false;
+        each.style.backgroundColor = "#fdcc94"
+    }
+}
 
-// }
-
-//userGuess.innerText = [...secretWord].map( i => i = '_').join(' ');
-// userGuess = userGuess.innerText.split('')
-// console.log(userGuess)
-
-//let remainingLetters = secretWord.length
-//console.log(remainingLetters)
-
-
-letters.addEventListener('click', e => {
+/* ---To target each alphabet press/click--- */
+document.querySelector('.alpha-container').addEventListener('click', e => {
     if(e.target.matches('button')){
-        letter = e.target.innerText
-        //console.log(letter)
-        
+        letter = e.target
+        let alpha = letter.innerHTML
+        console.log(alpha)
+        tries.indexOf(alpha) === -1 ? tries.push(alpha) : null
+        letter.style.backgroundColor = "grey"
+        letter.disabled = true;
+
+        if(chosenWord.includes(alpha)){
+            guessedWord();
+            checkGameWon();
+        }
+        else{
+            failed++;
+            checkGameLost();
+        }
     }
 })
 

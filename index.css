@@ -55,7 +55,7 @@ body {
     padding: 20px;
 }
 
-.alpha-container > button{
+.alphabet{
     background-color: #fdcc94;
     font-size: 16px;
     font-weight: 600;
@@ -64,7 +64,7 @@ body {
     width: 30px;
 }
 
-.alpha-container > button:hover{
+.alphabet:hover{
     cursor: pointer;
     background-color: #9b6c38;
 }
