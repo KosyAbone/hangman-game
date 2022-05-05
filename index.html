@@ -11,19 +11,19 @@
             <p>GUESS THE WORD</p>
 
             <div class="userGuess">
-                <button id="hint">(the hint)</button>
-                <h1 id="word">_ _ _ _ _ _ _</h1>
+                <p id="hint">(A hint will be displayed)</p>
+                <h1 id="word">_ _ _ _ _ _</h1>
             </div>
             <p>Lives Remaining: <span id="lives">6</span></p>
 
             <h4 id="final-message">WIN/LOSE</h4>
 
-            <svg height="350" width="250" class="figure-container">
+            <svg height="360" width="250" class="figure-container">
                 <!-- Rod -->
                 <line x1="60" y1="40" x2="200" y2="40" />
                 <line x1="200" y1="40" x2="200" y2="70" />
-                <line x1="60" y1="40" x2="60" y2="345" />
-                <line x1="10" y1="345" x2="160" y2="345" />
+                <line x1="60" y1="40" x2="60" y2="350" />
+                <line x1="10" y1="350" x2="180" y2="350" />
         
                 <!-- Head -->
                 <circle cx="200" cy="95" r="25" class="figure-part" />
@@ -66,7 +66,10 @@
                 <button class="alphabet">Z</button>
             </div>
 
-            <button id="start-btn" onclick="handleStart()">START</button>
+            <div id="dialog-btns">
+                <button class="dialog-btn start-btn">START</button>
+                <button class="dialog-btn quit-btn">QUIT</button>
+            </div>
 
         </div>
 

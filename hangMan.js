@@ -1,14 +1,16 @@
-let userGuess = document.getElementById('word')
-let lives = document.getElementById('lives')
-let startBtn = document.getElementById('start-btn')
-let finalMessage = document.getElementById('final-message')
-let letters = document.getElementsByClassName('alphabet')
-console.log(letters[0].innerHTML)
-let displayedHint = document.getElementById('hint')
+let userGuess = document.querySelector('#word')
+let hint = document.querySelector('#hint')
+let lives = document.querySelector('#lives')
+let startBtn = document.querySelector('.start-btn')
+let quitBtn = document.querySelector('.quit-btn')
+let finalMessage = document.querySelector('#final-message')
+let letters = document.querySelectorAll('.alphabet')
+
 let letter;
 let initialFill;
 let tries = []
 let chosenWord;
+let chosenHint;
 let failed = 0
 
 
@@ -18,18 +20,22 @@ const hints = ["fruit", "fabric", "social-media", "place", "country", "state"];
 
 function generateWord() { // Function that generates the word randomly	
 	let randNum = Math.floor(Math.random() * words.length);
-	chosenWord = words[randNum];
-    return chosenWord
+	let word = words[randNum];
+    return word
 }
 
 function generateHint(word){
 	let index = words.indexOf(word);
 	let hint = hints[index];
-    return hint
+    return hint;
 }
 
-function guessedWord() {
-    userGuess.innerHTML = chosenWord.split('').map(letter => (tries.indexOf(letter) >= 0 ? letter.toLowerCase() : "_ ")).join('');
+function showWord() {
+    userGuess.innerHTML = chosenWord.split('').
+                            map(letter => 
+                                (tries.indexOf(letter) >= 0 ? letter.toLowerCase() : "_ "))
+                            .join('');
+    hint.innerHTML = chosenHint
     //document.getElementById('display1').value = wordStatus;
 }
 
@@ -46,8 +52,10 @@ function checkGameWon(){
 
 /* ---when start is clicked to begin game--- */
 function handleStart(){
-    chosenWord = generateWord()
-    displayedHint = generateHint()
+    console.log('clicked')
+    chosenWord = generateWord().toLowerCase()
+    chosenHint = generateHint(chosenWord)
+    showWord()
     tries = []
     failed = 0;
     initialFill = chosenWord.replace(/[A-Z]/g, '_ ')
@@ -56,6 +64,7 @@ function handleStart(){
         each.style.backgroundColor = "#fdcc94"
     }
 }
+startBtn.addEventListener('click', handleStart)
 
 /* ---To target each alphabet press/click--- */
 document.querySelector('.alpha-container').addEventListener('click', e => {
