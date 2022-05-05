@@ -12,10 +12,9 @@ body {
 .main-container {
     background-color: #f0ecec;
     box-shadow: 1px 1px 5px rgba(0,0,0,0.25);
-    height: 80vh;
+    height: 85vh;
     width: 600px;
     margin: 60px auto;
-    
     border-radius: 20px;
     position: relative;
 }
@@ -92,12 +91,17 @@ body {
 }  */
 
 #start-btn{
-    position: absolute;
-    padding: 6px 30px;
+    /* position: absolute; */
+    margin: 60px auto;
+    display: block;
+    padding: 5px 30px;
     border-radius: 10px;
-    top: 520px;
-    font-size: 18px;
+    /* top: 520px; */
+    font-size: 20px;
 }
 #start-btn:hover{
     cursor: pointer;
+    background-color: #ebe9e9;
+    color:#f8a547;
+    transform: scale(1.15)
 }
