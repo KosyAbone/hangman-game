@@ -58,5 +58,5 @@ const gameOver = () => {
 
  }
 
-gameStart();
-play()
+// gameStart();
+// play()
