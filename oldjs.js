@@ -14,7 +14,7 @@ const play = () => {
 
     const guessArray = [...secretWord].map( i => i = '_');
     console.log(guessArray)
-    // let remainingLetters = secretWord.length
+    let remainingLetters = secretWord.length
     
 
 const gameOver = () => {
