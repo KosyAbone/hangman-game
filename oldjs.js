@@ -18,10 +18,10 @@ const play = () => {
     
 
 const gameOver = () => {
-    // if(remainingLetters === 0){
-    //     console.log("You Win!!!! You're a Champ");
-    //     alert("You Win!!! You're a Champ");
-    // }
+    if(remainingLetters === 0){
+        console.log("You Win!!!! You're a Champ");
+        alert("You Win!!! You're a Champ");
+    }
     if(lives === 0){
         console.log("Ouch!!! You're DEAD! Better luck next time...")
         alert("Ouch!!! You're DEAD! Better luck next time...")
