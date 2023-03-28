@@ -10,7 +10,7 @@ Game Started...\n`)
 
 const play = () => {
     const secretWord = "apee";
-    // let lives = 6;
+    let lives = 6;
 
     const guessArray = [...secretWord].map( i => i = '_');
     console.log(guessArray)
