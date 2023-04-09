@@ -1,4 +1,4 @@
-// for reference positiong
+// for reference position
 
 const gameStart = () => {
     console.log(`----------------------------------------------
