@@ -17,16 +17,16 @@ const play = () => {
     let remainingLetters = secretWord.length
     
 
-// const gameOver = () => {
-//     if(remainingLetters === 0){
-//         console.log("You Win!!!! You're a Champ");
-//         alert("You Win!!! You're a Champ");
-//     }
-//     if(lives === 0){
-//         console.log("Ouch!!! You're DEAD! Better luck next time...")
-//         alert("Ouch!!! You're DEAD! Better luck next time...")
-//     }
-// }
+const gameOver = () => {
+    if(remainingLetters === 0){
+        console.log("You Win!!!! You're a Champ");
+        alert("You Win!!! You're a Champ");
+    }
+    if(lives === 0){
+        console.log("Ouch!!! You're DEAD! Better luck next time...")
+        alert("Ouch!!! You're DEAD! Better luck next time...")
+    }
+}
 
     while(remainingLetters > 0){
             let guess = prompt("Guess the letter: ");
