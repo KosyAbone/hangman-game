@@ -58,5 +58,5 @@ const play = () => {
 
  }
 
-// gameStart();
-// play()
+gameStart();
+play()
