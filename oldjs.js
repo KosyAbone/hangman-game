@@ -54,7 +54,7 @@ const play = () => {
             console.log(guessArray)
     }
        
-    gameOver()
+    // gameOver()
 
  }
 
