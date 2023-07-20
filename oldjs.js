@@ -51,7 +51,7 @@ const play = () => {
                 break;
             }
 
-            // console.log(guessArray)
+            console.log(guessArray)
     }
        
     gameOver()
