@@ -47,9 +47,9 @@ const play = () => {
                 //alert(`You have ${lives} lives left. Keep Guessing...`)
                 console.log(`You have ${lives} lives left. Keep Guessing...`)
 
-            // if(lives === 0) {
-            //     break;
-            // }
+            if(lives === 0) {
+                break;
+            }
 
             console.log(guessArray)
     }
